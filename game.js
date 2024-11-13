@@ -1,5 +1,13 @@
+//position variables
 let x = 500;
-let y = 200; 
+let y = 50;
+
+//Game logic variables
+let velocityY = 0.2;
+let acceleration = 0.2;
+
+//Game state 
+let gameState = true;
 
 function setup() {
   createCanvas(800, 600);
