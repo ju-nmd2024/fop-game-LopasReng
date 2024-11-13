@@ -168,6 +168,9 @@ function draw() {
   BackGround();
   
   characterMinion();
+
+  //Checks if the game state is true
+  if (gameState === true) {
   y = y + velocityY;
   velocityY = velocityY + acceleration;
 
@@ -175,4 +178,10 @@ function draw() {
       if (mouseIsPressed) {
         velocityY = velocityY - 0.7;
       }
+      //Game stops (false) when the minion hitts the ground
+      if (y > 700) {
+        gameState = false;
+        console.log("Oh no! You died!");
+      }
+}
 }
