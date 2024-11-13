@@ -168,7 +168,6 @@ function draw() {
   BackGround();
   
   characterMinion();
-  if (y <= 600) {
-      y = y + 1.5;
-}
+  y = y + velocityY;
+  velocityY = velocityY + acceleration;
 }
