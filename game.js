@@ -1,4 +1,4 @@
-let x = 100;
+let x = 500;
 let y = 200; 
 
 function setup() {
@@ -19,7 +19,6 @@ function characterMinion(){
   fill(253, 224, 38);
   noStroke();
   rect(x, y, 200, 250, 90);
-  
   
   
   //glasses
@@ -157,10 +156,11 @@ function characterMinion(){
   }
 
 function draw() {
+  frameRate (60);
   BackGround();
   
   characterMinion();
-  if (x <= 350) {
-      x = x + 1.5;
+  if (y <= 600) {
+      y = y + 1.5;
 }
 }
