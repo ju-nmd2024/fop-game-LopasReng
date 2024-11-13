@@ -14,6 +14,7 @@ function BackGround(){
 }
 
 function characterMinion(){   
+  scale(0.5, 0.5);
   //Body
   fill(253, 224, 38);
   noStroke();
