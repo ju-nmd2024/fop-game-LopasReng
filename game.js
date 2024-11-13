@@ -17,7 +17,7 @@ function BackGround(){
   background(150, 150, 150);  
   fill (100, 100, 100);
   noStroke();
-  rect(0, 450, width, 150);
+  rect(0, 500, width, 100);
 
 }
 
@@ -170,4 +170,9 @@ function draw() {
   characterMinion();
   y = y + velocityY;
   velocityY = velocityY + acceleration;
+
+  // decrease the velocity when clicking
+      if (mouseIsPressed) {
+        velocityY = velocityY - 0.7;
+      }
 }
