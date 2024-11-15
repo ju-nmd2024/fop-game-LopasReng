@@ -3,11 +3,10 @@ let x = 500;
 let y = 50;
 
 //Game logic variables
-let velocityY = 0.2;
-let acceleration = 0.2;
+let velocityY = 0.1;
+let acceleration = 0.1;
 
 //Game state 
-let state = 
 let gameState = true;
 
 function setup() {
@@ -178,7 +177,7 @@ function gameScreen(){
 
 function draw() {
   
-  frameRate (60);
+  frameRate (120);
   gameScreen(); 
   //Checks if the game state is true
   if (gameState === true) {
@@ -187,7 +186,7 @@ function draw() {
 
   //Decrease the velocity when clicking
       if (mouseIsPressed) {
-        velocityY = velocityY - 0.7;
+        velocityY = velocityY - 0.3;
       }
   //Game stops (false) when the minion hitts the ground
       if (y > 700) {
