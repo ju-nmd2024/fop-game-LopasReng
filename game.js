@@ -7,12 +7,12 @@ let velocityY = 0.2;
 let acceleration = 0.2;
 
 //Game state 
+let state = 
 let gameState = true;
 
 function setup() {
   createCanvas(800, 600);
 }
-
 function BackGround(){
   background(150, 150, 150);  
   fill (100, 100, 100);
@@ -20,7 +20,6 @@ function BackGround(){
   rect(0, 500, width, 100);
 
 }
-
 function characterMinion(){   
   scale(0.5, 0.5);
   //Body
@@ -163,22 +162,34 @@ function characterMinion(){
   ellipse(x+125, y+285, 55, 30);
   }
 
-function draw() {
-  frameRate (60);
-  BackGround();
-  
-  characterMinion();
+  function homeScreen(){
 
+  }
+
+  function resultScreen(){
+
+  }
+
+function gameScreen(){
+  BackGround();
+  characterMinion();
+}
+
+
+function draw() {
+  
+  frameRate (60);
+  gameScreen(); 
   //Checks if the game state is true
   if (gameState === true) {
   y = y + velocityY;
   velocityY = velocityY + acceleration;
 
-  // decrease the velocity when clicking
+  //Decrease the velocity when clicking
       if (mouseIsPressed) {
         velocityY = velocityY - 0.7;
       }
-      //Game stops (false) when the minion hitts the ground
+  //Game stops (false) when the minion hitts the ground
       if (y > 700) {
         gameState = false;
         console.log("Oh no! You died!");
