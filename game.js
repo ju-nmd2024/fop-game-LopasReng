@@ -1,5 +1,5 @@
 //position variables
-let x = 500;
+let x = 650;
 let y = 50;
 
 //Game logic variables
@@ -12,6 +12,7 @@ let gameState = true;
 function setup() {
   createCanvas(800, 600);
 }
+
 function BackGround(){
   background(150, 150, 150);  
   fill (100, 100, 100);
@@ -162,6 +163,19 @@ function characterMinion(){
   }
 
   function startScreen(){
+    background(0, 100, 255);
+    //start button
+    fill(253, 244, 38);
+    noStroke();
+    rect(280, 200, 200, 100);
+
+    fill(0, 0, 0);
+    textSize(32);
+    text('start Game', 300, 260);
+
+    fill(255, 255, 255);
+    textSize(60);
+    text('Welcome to Bob the Rocket Game', 150, 150);
 
   }
 
@@ -195,11 +209,11 @@ function draw() {
         console.log("Oh no! You died!");
       } else {
         y = 700;
-        velocityY = 0;
-        console.log("You landed safely");
+        velocityY = 0.02;
+        console.log("You landed safely!");
         gameState = false;
       }
-  
+
 
 }
 }
