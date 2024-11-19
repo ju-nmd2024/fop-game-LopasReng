@@ -7,7 +7,7 @@ let velocityY = 0.1;
 let acceleration = 0.1;
 
 //Game state 
-let gameState = true;
+let gameState = "startScreen";
 
 function setup() {
   createCanvas(800, 600);
@@ -179,15 +179,23 @@ function characterMinion(){
 
   }
 
-  function resultScreen(){
-
-  }
-
 function gameScreen(){
   BackGround();
   characterMinion();
 }
 
+function crashResult(){
+background(0, 100, 155);
+fill(255, 255, 255);
+textSize(60);
+text("Game Over...", 240, 200);
+//button
+fill(253, 224, 38);
+rect(300, 300, 200, 100); 
+fill(0, 0, 0);
+textSize(30);
+text("Try Again", 335, 360);
+}
 
 function draw() {
   
