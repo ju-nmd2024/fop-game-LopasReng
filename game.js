@@ -175,7 +175,7 @@ function characterMinion(){
 
     fill(255, 255, 255);
     textSize(60);
-    text('Bob the Rocket Game', 100, 150);
+    text("Bob the Rocket Game", 100, 150);
 
   }
 
@@ -215,14 +215,15 @@ function mousePressed() {
   if (gameState === "startScreen") {
     // Start button logic
     if (mouseX >= 280 && mouseX <= 480 && mouseY >= 200 && mouseY <= 300) {
-      gameState = "gameScreen"; // Transition to the game screen
+      gameState = "gameScreen";
       console.log("You started the game!");
     }
   } else if (gameState === "crashResult" || gameState === "safeLandingResult") {
     // Try Again button logic
     if (mouseX >= 300 && mouseX <= 500 && mouseY >= 300 && mouseY <= 400) {
       gameState = "gameScreen"; // Restart the game
-      x = 650; // Reset position
+      // Reset positions
+      x = 650; 
       y = 50;
       velocityY = 0.1;
       console.log("You are trying again!");
@@ -231,38 +232,37 @@ function mousePressed() {
 }
 
 function draw() {
-  
-  frameRate (60);
+  frameRate(60);
 
-  //Checks if the game state is true
   if (gameState === "startScreen") {
     startScreen();
-  }else if (gameState === "gameScreen"){
-      gameScreen();
+  } else if (gameState === "gameScreen") {
+    gameScreen();
+    // Update the minion's position
+    y = y + velocityY;
+    velocityY = velocityY + acceleration;
+
+    // Decrease the velocity when clicking
+    if (mouseIsPressed) {
+      velocityY = velocityY - 0.3;
     }
 
-  y = y + velocityY;
-  velocityY = velocityY + acceleration;
-
-  //Decrease the velocity when clicking
-      if (mouseIsPressed) {
-        velocityY = velocityY - 0.3;
-      }
-
-  //Game stops when the minion hitts the ground    
-  if (y > 700) {
-    if (velocityY > 2){
+    // the following 19 lines of code was viewed and corrected by https://chatgpt.com/share/673cc44c-351c-800c-a023-ad68ce8254b8
+    // Stop the game if minion hits the ground
+    if (y > 700) {
+      if (velocityY > 2) {
         gameState = "crashResult";
         console.log("Oh no! You died!");
       } else {
         y = 700;
         velocityY = 0.02;
-        gameState = "safeLandingResult";
+        gameState = "safeLandingResult"; // Transition to safe landing result screen
         console.log("You landed safely!");
       }
-  } else if (gameState === "crashResult"){
+    }
+  } else if (gameState === "crashResult") {
     crashResult();
   } else if (gameState === "safeLandingResult") {
     safeLandingResult();
   }
-  }
+}
