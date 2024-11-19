@@ -197,6 +197,22 @@ textSize(30);
 text("Try Again", 335, 360);
 }
 
+function safeLandingResult(){
+  background(0, 100, 155);
+  fill(255);
+  textSize(60);
+  text("You Made It!", 240, 200);
+// Try Again button
+  fill(253, 224, 38);
+  rect(300, 300, 200, 100); 
+
+  fill(0, 0, 0);
+  textSize(30);
+  text("Try Again", 335, 360);
+}
+
+
+
 function draw() {
   
   frameRate (60);
