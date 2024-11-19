@@ -161,7 +161,7 @@ function characterMinion(){
   ellipse(x+125, y+285, 55, 30);
   }
 
-  function homeScreen(){
+  function startScreen(){
 
   }
 
@@ -177,7 +177,7 @@ function gameScreen(){
 
 function draw() {
   
-  frameRate (120);
+  frameRate (60);
   gameScreen(); 
   //Checks if the game state is true
   if (gameState === true) {
@@ -188,10 +188,20 @@ function draw() {
       if (mouseIsPressed) {
         velocityY = velocityY - 0.3;
       }
-  //Game stops (false) when the minion hitts the ground
-      if (y > 700) {
+  //Game stops (false) when the minion hitts the ground    
+  if (y > 700) {
+    if (velocityY > 2){
         gameState = false;
         console.log("Oh no! You died!");
+      } else {
+        y = 700;
+        velocityY = 0;
+        console.log("You landed safely");
+        gameState = false;
       }
+  
+
 }
 }
+}
+
