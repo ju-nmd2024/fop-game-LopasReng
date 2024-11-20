@@ -1,5 +1,5 @@
 //position variables
-let x = 480;
+let x = 380;
 let y = 50;
 
 //Game logic variables
@@ -59,6 +59,7 @@ function BackGround(){
   noStroke();
   ellipse(100, 100, 100);
 }
+
 
 function characterMinion(){   
   scale(0.5, 0.5);
