@@ -1,5 +1,5 @@
 //position variables
-let x = 650;
+let x = 480;
 let y = 50;
 
 //Game logic variables
@@ -14,12 +14,52 @@ function setup() {
 }
 
 function BackGround(){
-  background(150, 150, 150);  
-  fill (100, 100, 100);
+  background(150, 200, 250);  
+  fill(100, 200, 100);
   noStroke();
-  rect(0, 500, width, 100);
+  rect(0, 500, 800, 100);
+  
+  // Hill
+  fill(100, 200, 100);
+  strokeWeight(5);
+  arc(580, 550, 500, 350, PI, 0);
+  
+  // House
+  fill(60, 60, 60);
+  noStroke();
+  rect(450, 290, 250, 150);
 
+  fill(70, 70, 70);
+  noStroke();
+  rect(440, 200, 270, 150);
+
+  fill(80, 80, 80);
+  triangle(530, 300, 580, 180, 630, 300);
+  
+  fill(80, 80, 80);
+  noStroke();
+  rect(530, 300, 100, 150);
+
+  //windows
+  fill (0, 150, 250);
+  noStroke();
+  ellipse(578, 270, 40);
+
+  fill (50, 150, 250);
+  noStroke();
+  rect(564, 310, 30, 50);
+
+  //door
+  fill(100, 50, 90);
+  noStroke();
+  rect (560, 390, 40, 60);
+
+  //sun
+  fill(250, 250, 150);
+  noStroke();
+  ellipse(100, 100, 100);
 }
+
 function characterMinion(){   
   scale(0.5, 0.5);
   //Body
@@ -162,7 +202,7 @@ function characterMinion(){
   ellipse(x+125, y+285, 55, 30);
   }
 
-  function startScreen(){
+function startScreen(){
     background(0, 100, 155);
     //start button
     fill(253, 224, 38);
