@@ -264,7 +264,7 @@ function mousePressed() {
     if (mouseX >= 300 && mouseX <= 500 && mouseY >= 300 && mouseY <= 400) {
       gameState = "gameScreen"; // Restart the game
       // Reset positions
-      x = 650; 
+      x = 380; 
       y = 50;
       velocityY = 0.1;
       console.log("You are trying again!");
