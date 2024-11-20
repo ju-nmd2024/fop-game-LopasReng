@@ -243,7 +243,7 @@ function draw() {
     velocityY = velocityY + acceleration;
 
     // Decrease the velocity when clicking
-    if (mouseIsPressed) {
+    if (keyIsDown(32)) {
       velocityY = velocityY - 0.3;
     }
 
